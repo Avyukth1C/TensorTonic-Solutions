@@ -4,7 +4,7 @@ def relu(x):
     """
     Implement ReLU activation function.
     """
-    x = np.asarray(x, dtype = float)
+    # x = np.asarray(x, dtype = float)
     
 
     return np.maximum(0, x)
