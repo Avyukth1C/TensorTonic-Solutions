@@ -6,12 +6,7 @@ def selu(x, lam=1.0507009873554804934193349852946, alpha=1.673263242354377284817
     Returns a list of floats rounded to 4 decimal places.
     """
     x = np.asarray(x, dtype = float)
-    result = []
-    
-    for i in range(x.shape[0]):
-        if x[i] > 0:
-            result.append(lam * x[i])
-        else:
-            result.append(lam * alpha * (np.exp(x[i]) - 1))
+    result = np.where(x > 0, lam * x, lam * alpha * (np.exp(x)-1))
     return result
+    
     pass
