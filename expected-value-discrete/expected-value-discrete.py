@@ -9,7 +9,5 @@ def expected_value_discrete(x, p):
     if not np.allclose(np.sum(p), 1,rtol = 1e-6):
         raise ValueError("Invalid probabilities")
 
-    
-
     return np.sum(x * p)
     pass
