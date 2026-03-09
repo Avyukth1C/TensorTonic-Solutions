@@ -6,14 +6,10 @@ def expected_value_discrete(x, p):
     """
     x = np.array(x, dtype = float)
     p = np.array(p, dtype = float)
-    
-    prod = x * p
-    sum = 0
-    result = 0
-    for i in range(prod.shape[0]):
-        sum += p[i]
-        result += prod[i] 
-    if sum != 1:    
+    if not np.allclose(np.sum(p), 1,rtol = 1e-6):
         raise ValueError("Invalid probabilities")
-    return result
+
+    
+
+    return np.sum(x * p)
     pass
