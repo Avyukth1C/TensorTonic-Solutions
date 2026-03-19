@@ -6,10 +6,6 @@ def make_diagonal(v):
     """
     v = np.asarray(v, dtype = float)
     v_shape = len(v)
-    D = np.zeros((v_shape, v_shape))
-    for i in range(D.shape[0]):
-        for j in range(D.shape[1]):
-            if i == j:
-                D[i,j] = v[i]
+    D = np.diag(v.astype(float))
 
     return D
