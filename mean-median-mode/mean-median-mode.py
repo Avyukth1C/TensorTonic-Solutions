@@ -10,7 +10,7 @@ def mean_median_mode(x):
     length = len(x)
     mean = float(np.mean(x))
     
-    median = np.median(x)
+    median = float(np.median(x))
     
     counts = Counter(x)
     max_count = max(counts.values())
